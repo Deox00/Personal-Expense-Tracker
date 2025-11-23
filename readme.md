@@ -1,122 +1,104 @@
-Personal Expense Tracker (Tkinter GUI)
+# 💰 Personal Expense Tracker (Tkinter GUI)
 
-A clean, elegant, and fully functional Personal Expense Tracker built using Python Tkinter.
-This application allows users to add income and expenses, track their current balance, and view detailed transaction history — all stored persistently using a JSON file.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-🚀 Features
-✔ Modern Dark-Themed GUI
+A clean, elegant, and fully functional **Personal Expense Tracker** built using Python and Tkinter. This application allows users to add income and expenses, track their current balance, and view detailed transaction history — all stored persistently using a local JSON file.
 
-A classy matte-black interface with clean buttons, cards, and spacing.
+![App Screenshot]
+Screenshot 2025-11-23 191802.png
+Screenshot 2025-11-23 192157.png
+Screenshot 2025-11-23 191838.png
+Screenshot 2025-11-23 192028.png
 
-✔ Add Income & Expenses
+---
 
-Popup windows allow users to add:
+## 🚀 Features
 
-Amount
+### ✔ Modern Dark-Themed GUI
+A classy **matte-black interface** (`#171717`) designed with clean buttons, distinct cards, and comfortable spacing for a premium user experience.
 
-Note/description
+### ✔ Add Income & Expenses
+Intuitive popup windows allow users to easily input:
+* **Amount** (Validation included)
+* **Note/Description**
+* **Timestamp** (Auto-generated)
 
-Timestamp (auto-generated)
+### ✔ Live Balance Calculation
+The dashboard updates the **Current Balance** in real-time immediately after every transaction.
 
-✔ Live Balance Calculation
+### ✔ Transaction History
+A scrollable list box displaying:
+* 📅 Date & Time
+* 📝 Description
+* 💵 Income (+) or Expense (–)
 
-Real-time updates to your current balance after each transaction.
+### ✔ Persistent Storage (JSON)
+No database setup required! All transactions are stored in `transactions.json` and loaded automatically every time the app starts.
 
-✔ Transaction History
+---
 
-Scrollable list showing:
+## 🛠️ Technologies Used
 
-Date & Time
+| Component | Purpose |
+| :--- | :--- |
+| **Python** | Core logic and application flow |
+| **Tkinter** | Standard GUI framework for the interface |
+| **JSON** | Lightweight persistent data storage |
+| **Datetime** | Automatic timestamp generation |
 
-Note
+---
 
-Income (+) or Expense (–)
+## 📂 Project Structure
 
-Clean formatted entries
-
-✔ Persistent Storage (JSON)
-
-All transactions are stored in transactions.json, and loaded automatically every time the app starts.
-
-📂 Project Structure
+```text
 Personal-Expense-Tracker/
 │
-├── main.py                 # Main Tkinter GUI Application
-├── transactions.json       # Auto-generated JSON storage
-└── README.md               # Project documentation
+├── main.py               # Main Tkinter GUI Application
+├── transactions.json     # Auto-generated JSON storage (created on first run)
+└── README.md             # Project documentation
+🧠 How It Works (Internal Flow)
+Load Data: On startup, the app reads existing records from transactions.json.
 
-🧠 How It Works (Flow)
+Show Dashboard: Displays the calculated balance and populates the scrollable history list.
 
-1️⃣ Load Data
-Reads all previous transactions from transactions.json.
+Add Transaction: User clicks "Add Income" or "Add Expense," filling out a popup form.
 
-2️⃣ Show Dashboard
-Displays:
+Save to JSON: The new entry is appended to the list and dumped into the JSON file immediately.
 
-Current balance
+Update UI: The balance label and listbox refresh instantly to reflect changes.
 
-Scrollable transaction list
-
-3️⃣ Add Income/Expense
-User enters amount + note in popup form.
-
-4️⃣ Save to JSON
-Every transaction is appended and stored permanently.
-
-5️⃣ Update UI
-Balance and transaction list refresh instantly.
-
-🛠️ Technologies Used
-Component	Purpose
-Python	Core language
-Tkinter	GUI framework
-JSON	Persistent storage
-datetime	Automatic timestamps
 ▶️ How to Run the Project
-Step 1 — Install Python
+Step 1: Install Python
+Ensure you have Python installed (Version 3.8 or higher is recommended).
 
-Requires Python 3.8+
+Step 2: Clone & Run
+Navigate to the folder and run the main script:
 
-Step 2 — Run the Program
+Bash
+
 python main.py
+Step 3: Start Tracking!
+The GUI opens instantly. You can start adding transactions right away.
 
-Step 3 — Start Tracking!
+🔄 Resetting Data
+If you want to clear your transaction history completely, you have two options:
 
-The GUI opens instantly with:
+Option A (Manual): Delete the transactions.json file from the folder. The app will create a fresh one next time it runs.
 
-Title
+Option B (Programmatic): Run this simple Python command:
 
-Balance card
-
-Add buttons
-
-Transaction list
-
-🔄 Reset JSON Data (Optional)
-
-If you want to clear all transactions only once, delete or empty transactions.json.
-
-Empty version:
-
-[]
-
-
-Or programmatically:
+Python
 
 open("transactions.json", "w").write("[]")
+📌 Future Improvements
+[ ] Category-wise spending charts (Pie charts)
 
+[ ] Monthly summary reports
 
+[ ] Export data to CSV/Excel
 
-📌 Future Improvements (Optional)
+[ ] Authentication (Login/Password)
 
-Category-wise spending charts
-
-Monthly summary
-
-Export to CSV/Excel
-
-Login/Password screen
-
-Rounded-corner UI
-
-Mobile-like responsive layout
+[ ] Responsive layout adjustments
